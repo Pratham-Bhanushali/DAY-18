@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Pizza game</title>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+
+    </head>
+    <style>
+
+        .mypizza{
+            background-color: black;
+            /* src: url("onion_pizza.webp"); */
+        }
+        .base{
+            /* src: url("base.jpg"); */
+            background-color: red;
+        }
+
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $("#onion").draggable();
+            $("#tomato").draggable();
+            $("#capsicum").draggable();
+            $("#paneer").draggable();
+
+            $("#base").droppable({
+                accept: "#onion",
+                drop:function(event,ui){
+                    // $(this).addClass("mypizza");
+                    $(this).addClass("mypizza").find("img").html()
+
+                }
+            })
+        })
+    </script>
+
+    <body>
+        
+        <div>
+            <h1>Add toppings to the pizza base</h1>
+        </div>
+        <br><br>
+        <div>
+            <img src="base.jpg" height="500px" width="500px" style="margin-left: 10%;" id="base" class="base">
+            <span>pizza</span>
+        </div><br>
+
+        <div>
+            <img src="onions.webp" height="100px" width="100px" style="margin-left: 5%;" id="onion">
+            <img src="tomato.jpg" height="100px" width="100px" style="margin-left: 5%;" id="tomato">
+            <img src="capsicum.jpg" height="100px" width="100px" style="margin-left: 5%;" id="capsicum">
+            <img src="paneer.jpg" height="100px" width="100px" style="margin-left: 5%;" id="paneer">
+        </div>
+
+    </body>
+
+</html>

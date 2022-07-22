@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>shopping for alcohol</title>
+        <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet" type="text/css" />
+        <script src="https://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js" type="text/javascript"></script>
+
+        <style>
+
+            #img1{
+                height: 300px;
+                width: 300px;
+            }
+
+            .trolly{
+                height: 600px;
+                width: 600px;
+                background-color: aqua;
+                padding-top: 50px;
+                padding-left: 50px;
+            }
+
+            .Mycls{
+                background-color: rgb(90, 121, 121);
+            }
+
+        </style>
+
+        <script>
+            $(document).ready(function(){
+
+                $("#img1").draggable();
+
+                $("#trolly").droppable({
+                    accept: "#img1",
+                    drop:function(event,ui){
+                        $(this).addClass("Mycls").find("p").html("alcohol added");
+                    }
+                })
+
+            })
+        </script>
+
+    </head>
+
+    <body>
+
+        <div id="trolly" class="trolly">
+            <img src="trooly.webp" height="500px" width="500px">
+            <p>helloo</p>
+        </div>
+
+        <div id="img1">
+            <img src="pexels-janik-butz-4068383.jpg" height="250px" width="250px">
+        </div>
+
+    </body>
+</html>
